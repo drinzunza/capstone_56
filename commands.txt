@@ -1,0 +1,7 @@
+# activate venv
+win: venv\Scripts\activate
+mac: source venv/bin/activate
+
+
+# run server
+python3 manage.py runserver
