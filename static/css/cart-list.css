@@ -1,0 +1,37 @@
+.cart-list {
+    background-color: #fafafa;   
+}
+
+.cart-list h1 {
+    color:darkcyan;
+    text-align: center;
+}
+
+.cart-list .list {
+    padding: 20px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cart-list .prod {
+    border: 1px solid #6a6a6a;
+    border-radius: 5px;
+    background-color: white;
+    padding: 5px 10px;
+    margin-bottom: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.cart-list .prod img {
+    max-height: 80px;
+}
+
+.cart-list .prod h6 {
+    flex: 3;
+}
+
+.cart-list .prod label {
+    flex: 1;
+}

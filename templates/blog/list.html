@@ -1,0 +1,63 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/post_list.css' %}">
+{% endblock %}
+
+{% block js %}
+<script src="{% static 'js/list.js' %}"></script>
+{% endblock %}
+
+{% block title %}
+Your Feed
+{% endblock %}
+
+
+{% block content %}
+<div class="post-list">
+
+    <div class="controls">
+        <h1>Your Feed</h1>
+        <a class="btn btn-outline-primary" href="{% url 'post_create' %}">Create Post</a>
+
+        <button id="btnCreate" class="btn btn-outline-primary">Create in Modal</button>
+    </div>
+
+    <div class="list">
+        {% for post in post_list %}
+            <div class="post">
+                
+                {% if post.image %}
+                <img src="{{post.image.url}}">
+                {% endif %}
+
+                <div class="content">
+                    <h5>{{ post.title }}</h5>
+                    <p>{{ post.content|truncatechars:150 }}</p>
+
+                    <a href="{% url 'post_details' post.id %}">View Details</a>
+                </div>
+                    
+            </div>
+        {% endfor %}
+    </div>
+
+    <div id="popup" class="popup">
+        <div class="popup-content">
+
+            <span class="closePopup">&times;</span>
+
+            <h3>Create new Post</h3>
+            <form method="post" action="{% url 'post_create' %}" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                {{ form.as_p }}
+
+                <button>Create Post</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+{% endblock %}

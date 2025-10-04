@@ -1,0 +1,28 @@
+
+.post-create h1 {
+    text-align: center;
+    color: darkcyan;
+}
+
+.post-create {
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+
+    border:1px solid #c2cacd;
+    border-radius: 6px;
+    padding: 20px;
+    background-color: white;
+    margin-top: 80px;
+}
+
+.post-create label {
+    width: 100px;
+    text-align: right;
+    margin-right: 5px;
+    vertical-align: top;
+}
+
+.post-create .controls {
+    text-align: center;
+}

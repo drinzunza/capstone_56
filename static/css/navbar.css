@@ -25,3 +25,28 @@ nav .items li a:hover {
   text-decoration: underline;
   color: tomato;
 }
+
+nav .end {
+  margin-left: auto !important;
+  padding: 0 !important;
+}
+
+nav .user-info {
+  display: inline-block;
+  border: 1px solid #3f5266;
+  border-radius: 4px;
+  color:#3f5266;
+  font-weight: 500;
+  padding: 5px;
+  margin-top: 5px;
+  cursor: pointer;
+}
+
+nav .user-info:hover {
+  border-color: black;
+  color: black;
+}
+
+nav .login-btn {
+  color: #215be4 !important;
+}

@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load math_filters %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/cart-list.css' %}">
+{% endblock %}
+
+{% block title %}
+Cart
+{% endblock %}
+
+
+{% block content %}
+<div class="cart-list">
+    <h1>Ready to complete the order?</h1>
+ 
+    <div class="list">
+        {% for product, quantity in cart.items %}
+        <div class="prod">
+            <img src="{{ product.image.url }}">
+            <h6>{{product.title}}</h6>
+            <label>{{product.price}}</label>
+            <label>{{quantity}}</label>
+            <label>{{product.price|multiply:quantity}}</label>
+            <form method="post" action="{% url 'remove_cart' product.id %}">
+                {% csrf_token %}
+                <button type="submit" class="btn btn-sm btn-danger">Remove</button>
+            </form>
+        </div>
+        {% endfor %}
+    </div>
+
+
+</div>
+{% endblock %}

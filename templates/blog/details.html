@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/post_details.css' %}">
+{% endblock %}
+
+{% block title %}
+Post Details
+{% endblock %}
+
+
+{% block content %}
+<section class="post-details">
+    <div class="container">
+        <div class="card post-card shadow-sm border-0">
+            {% if post.image %}
+                <img src="{{ post.image.url }}" class="card-img-top" alt="{{ post.title }}">
+            {% endif %}
+            <div class="card-body p-4">
+                <h1 class="h3 post-title">{{ post.title }}</h1>
+                <div class="text-muted post-meta mb-3">
+                    <span>By {{ post.creator.username }}</span>
+                    <span class="mx-2">•</span>
+                    <span>{{ post.created_on|date:"M d, Y" }}</span>
+                </div>
+
+                {% if not post.image %}
+                    <div class="alert alert-secondary mb-3">No image available</div>
+                {% endif %}
+
+                <div class="post-content">{{ post.content|linebreaksbr }}</div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}

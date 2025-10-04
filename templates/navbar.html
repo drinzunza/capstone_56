@@ -6,6 +6,10 @@
         <li>
             <a href="{% url 'home' %}">Home</a>
         </li>
+        
+        <li>
+            <a href="{% url 'products_list' %}">Products</a>
+        </li>
 
         <li>
             <a href="{% url 'contact' %}">Contact us</a>
@@ -13,6 +17,18 @@
 
         <li>
             <a href="{% url 'about' %}">About us</a>
+        </li>
+
+        <li>
+            <a href="{% url 'cart' %}">Cart</a>
+        </li>
+
+        <li class="end">
+            {% if user.is_authenticated %}
+                <span class="user-info">{{ user.username }}</span>
+            {% else %}
+                <a class="login-btn" href="{% url 'login' %}">Login</a>
+            {% endif %}
         </li>
     </ul>
 </nav>

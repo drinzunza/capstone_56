@@ -1,0 +1,39 @@
+.about .contact-card {
+}
+
+.about h3 {
+  color: #333;
+  text-align: center;
+}
+
+.about h1 {
+  color: darkcyan;
+  text-align: center;
+}
+
+.about .services {
+  margin-top: 2rem;
+  padding: 1rem;
+}
+
+.about .services h3 {
+  text-align: left;
+}
+
+.about .service {
+  /* margin: 10px; */
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  background-color: white;
+  padding: 10px;
+  min-height: 100px;
+}
+
+/* this should be at the end of the file */
+@media (max-width: 767px) {
+  /* For Smartphone */
+
+  .about h1 {
+    color: tomato;
+  }
+}

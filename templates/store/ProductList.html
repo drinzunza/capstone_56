@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'css/product-list.css' %}">
+{% endblock %}
+
+{% block title %}
+Store
+{% endblock %}
+
+
+{% block content %}
+<div class="product-list">
+    <h1>Our Catalog!</h1>
+
+    {% for product in product_list %}
+        <div class="product">
+            {% if product.image %}
+                <img src="{{product.image.url}}">
+            {% endif %}
+
+            <h5>{{product.title}}</h5>
+            <p>{{ product.description|truncatechars:80 }}</p>
+
+            <label>Price: ${{ product.price }}</label>
+
+            <form method="post" action="{% url 'add_cart' product.id %}">
+                {% csrf_token %}
+                <input type="number" name="quantity" value="1">
+                <button type="submit" class="btn btn-sm btn-primary">Add</button>
+            </form>
+        </div>
+    {% endfor %}
+
+</div>
+{% endblock %}

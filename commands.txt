@@ -5,3 +5,33 @@ mac: source venv/bin/activate
 
 # run server
 python3 manage.py runserver
+
+
+# migrations
+python3 manage.py makemigrations
+python3 manage.py migrate
+
+
+
+# git
+
+## on time commands
+git init
+git remote add origin <URL>
+
+## every time
+git add -A
+git commit -m "ANY MESSAGE"
+git push
+
+
+
+
+
+# Migrations
+python3 manage.py makemigrations
+python3 manage.py migrate
+
+
+# to create a super user:
+python3 manage.py createsuperuser

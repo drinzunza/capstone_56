@@ -1,0 +1,30 @@
+
+
+/* Simple, non-responsive styles for post details */
+.post-details .container {
+    max-width: 800px;
+    margin-top: 24px;
+    margin-bottom: 24px;
+}
+
+.post-card {
+    border-radius: 0.75rem;
+    overflow: hidden;
+}
+
+.post-details .card-img-top {
+    max-height: 420px;
+    object-fit: cover;
+}
+
+.post-title {
+    margin-bottom: 0.25rem;
+}
+
+.post-meta {
+    font-size: 0.9rem;
+}
+
+.post-content p {
+    margin-bottom: 1rem;
+}
