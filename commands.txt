@@ -35,3 +35,12 @@ python3 manage.py migrate
 
 # to create a super user:
 python3 manage.py createsuperuser
+
+
+
+
+# push github
+git push -u origin master
+
+# push heroku
+git push -u heroku master

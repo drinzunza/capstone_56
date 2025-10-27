@@ -3,10 +3,11 @@ from django.shortcuts import render
 from django.views.generic import ListView, CreateView, View
 from .models import Product
 from django.urls import reverse_lazy, reverse
+from django.contrib.auth.mixins import LoginRequiredMixin
 
 # Create your views here.
 
-class ProductsList(ListView):
+class ProductsList(ListView, LoginRequiredMixin):
     model = Product
     template_name = "store/ProductList.html"
 
