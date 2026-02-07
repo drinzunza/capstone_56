@@ -30,13 +30,15 @@ class PostList(ListView):
         return context
 
 
+
+class PostDetail(DetailView):
+    model = Post
+    template_name = "blog/details.html"
+
+
+
 class PostCreate(CreateView):
     model = Post
     form_class = PostForm
     template_name = "blog/create.html"
     success_url = reverse_lazy('post_list')
-
-
-class PostDetail(DetailView):
-    model = Post
-    template_name = "blog/details.html"
